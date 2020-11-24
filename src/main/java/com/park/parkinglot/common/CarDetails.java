@@ -5,22 +5,21 @@
  */
 package com.park.parkinglot.common;
 
-/**
- *
- * @author user
- */
-public class CarDetails implements java.io.Serializable {
+
+public class CarDetails implements java.io.Serializable{
     private Integer id;
+    
     private String licensePlate;
+    
     private String parkingSpot;
+    
     private String username;
 
     public CarDetails(Integer id, String licensePlate, String parkingSpot, String username) {
-        this.id=id;
-        this.licensePlate=licensePlate;
-        this.parkingSpot=parkingSpot;
-        this.username=username;
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.id = id;
+        this.licensePlate = licensePlate;
+        this.parkingSpot = parkingSpot;
+        this.username = username;
     }
 
     public Integer getId() {
@@ -54,5 +53,6 @@ public class CarDetails implements java.io.Serializable {
     public void setUsername(String username) {
         this.username = username;
     }
+    
     
 }

@@ -13,13 +13,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-/**
- *
- * @author user
- */
+
+
 @Entity
 @Table(name = "CARS")
 public class Car implements Serializable {
@@ -35,8 +32,15 @@ public class Car implements Serializable {
     
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "USER_KEY")
-    @OneToMany(mappedBy= "user")
     private User user;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getLicensePlate() {
         return licensePlate;
@@ -60,15 +64,6 @@ public class Car implements Serializable {
 
     public void setUser(User user) {
         this.user = user;
-    }
-    
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 
     @Override

@@ -11,12 +11,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-/**
- *
- * @author user
- */
+
 @Entity
 @Table(name = "USERS")
 public class User implements Serializable {
@@ -25,7 +23,7 @@ public class User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-    
+   
     private String username;
     
     private String email;
@@ -34,7 +32,16 @@ public class User implements Serializable {
     
     private String position;
     
+    @OneToMany(mappedBy = "user")
     private Collection<Car> cars;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getUsername() {
         return username;
@@ -75,15 +82,7 @@ public class User implements Serializable {
     public void setCars(Collection<Car> cars) {
         this.cars = cars;
     }
-    
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     @Override
     public int hashCode() {

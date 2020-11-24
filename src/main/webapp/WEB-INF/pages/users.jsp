@@ -10,8 +10,7 @@
 
 <t:pageTemplate pageTitle="Users">
     <h1>Users</h1>
-
-    <c:forEach var="car" items="${users}" varStatus="status">
+    <c:forEach var="user" items="${users}" varStatus="status">
         <div class="row">
             <div class="col-sm-4">
                 ${user.username}
@@ -24,5 +23,5 @@
             </div>
         </div>
     </c:forEach>
-    
+
 </t:pageTemplate>

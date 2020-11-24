@@ -5,24 +5,24 @@
  */
 package com.park.parkinglot.common;
 
-/**
- *
- * @author user
- */
-public class UserDetails implements java.io.Serializable {
+
+public class UserDetails implements java.io.Serializable{
+    
     private Integer id;
+    
     private String username;
+    
     private String email;
+    
     private String position;
 
-    public UserDetails(Integer id, String username, String email, String position)
-    {
-        this.id=id;
-        this.username=username;
-        this.email=email;
-        this.position=position;
+    public UserDetails(Integer id, String username, String email, String position) {
+        this.id = id;
+        this.username = username;
+        this.email = email;
+        this.position = position;
     }
-    
+
     public Integer getId() {
         return id;
     }
